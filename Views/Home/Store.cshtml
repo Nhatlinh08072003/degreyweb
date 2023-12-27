@@ -1,0 +1,265 @@
+﻿
+@{
+    ViewBag.Title = "Store";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+    <link href="~/Content/store.css" rel="stylesheet" />
+    @*<link href="~/Content/header-footer.css" rel="stylesheet" />*@
+}
+<head>
+   <style>
+       .main-store {
+           height: 2922px;
+       }
+
+       .container {
+           padding-right: 15px;
+           padding-left: 15px;
+           margin-right: auto;
+           margin-left: auto;
+       }
+
+       .title-store {
+           padding-top: 15px;
+           padding-bottom: 30px;
+           font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+           font-size:30px;
+       }
+
+       .row {
+           margin-right: -15px;
+           margin-left: -15px;
+           justify-content: normal;
+       }
+
+       .wrap-title {
+           height: 2974px;
+           width: 817.5px;
+           padding-bottom: 1px;
+           padding-left: 20px;
+           padding-right: 20px;
+           padding-top: 15px;
+       }
+
+       .map-container {
+           padding-bottom: 40px;
+           border-bottom: 1px solid #d8d3d3;
+           padding-top: 40px;
+           border-top: 1px solid #d8d3d3;
+       }
+
+      
+
+       pageDetail-aside-right {
+       }
+
+       .sidebox {
+           width: 100%;
+           height: 496px;
+           margin: 0 0 20px;
+           position: relative;
+           padding: 20px 15px;
+           background: #ffffff;
+       }
+
+       /*drop*/
+
+       .dropbtn {
+           /* text-indent: -110px; */
+           width: 100%;
+           background-color: white;
+           color: black;
+           /* padding: 16px; */
+           font-size: 20px;
+           border: none;
+           /* font-size: 18px; */
+           font-weight: 700;
+           height: 45.6px;
+           line-height: 21.6px;
+       }
+
+           .dropbtn:hover, .dropbtn:focus {
+               background-color: white;
+           }
+
+       .dropdown-store {
+           width: 100%;
+           position: relative;
+           display: inline-block;
+       }
+
+       .dropdown-content-store {
+           width: 100%;
+           display: none;
+           position: absolute;
+           background-color: white;
+           min-width: 160px;
+           overflow: auto;
+           z-index: 1;
+       }
+
+           .dropdown-content-store a {
+               color: black;
+               padding: 12px 16px;
+               text-decoration: none;
+               display: block;
+           }
+
+       .dropdown-store a:hover {
+           background-color: #ddd;
+       }
+
+       .dropdown-content-store {
+           display: none;
+           position: absolute;
+           min-width: 160px;
+           box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+           z-index: 1;
+       }
+
+       .dropdown-store:hover .dropdown-content-store {
+           display: block;
+       }
+
+       /* Khi dropdown-content xuất hiện, đẩy thẻ img xuống */
+       .dropdown-store:hover .sidebox img {
+           margin-top: 200px; /* Điều chỉnh khoảng cách tùy theo cần thiết */
+       }
+       * {
+           font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+       }
+
+
+   </style>
+</head>
+<div class="main-store">
+    <div class="breadcrumb-all">
+        <div class="container" style="height:100%">
+            <div class="wrap-breadcrumb">
+                
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9 col-sm-8 col-xs-12 pageDetail-main-left">
+                        <div class="wrap-title">
+                            <h3 class="title-store">HỆ THỐNG CỬA HÀNG DEGREY</h3>
+                            <iframe height="454" src="https://www.youtube.com/embed/kQ_pyG0jatk" frameborder="0" allowfullscreen style="width: 100%;"></iframe>
+
+
+                            <h1 style="text-align: center;">
+                                <img src="//file.hstatic.net/1000281824/file/bieu-tuong-dia-chi-png-dep_e540b91d0e034a2589f15e4f3b798e72_pico.png">&nbsp;
+                                <strong>
+                                    <span style="font-size:15px">43 Huỳnh Văn Bánh P.17&nbsp;Quận&nbsp;Phú Nhuận -&nbsp;</span>
+                                </strong>
+                                <span style="font-size:15px">
+                                    <strong>SÀI GÒN</strong>
+                                </span>
+                            </h1>
+                            <h1 style="text-align: center;">
+                                <img style="width: 211px; height: 290px;" src="//file.hstatic.net/1000281824/file/lbb2_3c0c7dbefcd5417097173f7b2b6d6287_medium.jpg">&nbsp;
+                                <img style="width: 211px; height: 290px;" src="//file.hstatic.net/1000281824/file/img_8447_00fd11bd37b042849d99678c5f116091_medium.jpg">&nbsp;
+                            </h1>
+                            <div class="map-container">
+                                <iframe height="454"
+                                        frameborder="0"
+                                        style="border: 0; width: 100%"
+                                      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.216018656542!2d106.67876667460345!3d10.794760558856158!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317528d411b3e417%3A0xe0fa6a792f44de69!2zNDMgSHXhu7NuaCBWxINuIELDoW5oLCBQaMaw4budbmcgMTcsIFBow7ogTmh14bqtbiwgVGjDoG5oIHBo4buRIEjhu5MgQ2jDrSBNaW5oLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1699256590337!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                        allowfullscreen>
+                                </iframe>
+                            </div>
+                            <h1 style="text-align: center;">
+                                <strong>
+                                    <img src="//file.hstatic.net/1000281824/file/bieu-tuong-dia-chi-png-dep_e540b91d0e034a2589f15e4f3b798e72_pico.png">&nbsp;
+                                    <span style="font-size:15px">
+                                        1041&nbsp;Lũy Bán Bích&nbsp;P.Tân Thành&nbsp;Quận&nbsp;Tân Phú -
+                                        <span style="color:#000000">
+                                            &nbsp;
+                                        </span>SÀI GÒN
+                                    </span>
+                                </strong>
+                            </h1>
+                            <h1 style="text-align: center;">
+                                <img style="width: 211px; height: 290px;" src="//file.hstatic.net/1000281824/file/lbb6_4e0b7beb03b74b7f90769f1d08810d4c_medium.jpg">&nbsp;
+                                <img style="width: 211px; height: 290px;" src="//file.hstatic.net/1000281824/file/img_7668_e9292d56d2fa40d09256574eeb423c90_medium.jpg">&nbsp;
+                            </h1>
+                            <div class="map-container">
+                                <iframe height="454"
+                                        frameborder="0"
+                                        style="border: 0; width: 100%"
+                                      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.2264832772044!2d106.63525427460354!3d10.79395815887102!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752fc2eb47c9af%3A0x979e3eb7da15d81e!2sDegrey!5e0!3m2!1svi!2s!4v1699256642402!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+                                </iframe>
+                            </div>
+                            @*<div class="media" style="padding-top: 40px;">
+                  <p style="text-align: justify;">
+                      <span style="font-size: 15px">
+                          <strong style="margin-left: 3px;">Hotline</strong><strong><a>: 0336311117</a></strong>
+                      </span>
+                  </p>
+        <br />
+                  <div style="text-align: justify;"><img src="https://file.hstatic.net/1000281824/file/fb_15215b561f504b139fdb35856eaa7290_icon.png">&nbsp;&nbsp;<a>https://www.facebook.com/degrey.saigon</a></div><br />
+                  <br>
+                  <hr>
+                  <div>
+                  <a style="text-align: justify;"><img src="https://file.hstatic.net/1000281824/file/ig_d1b18ea170384347808d4e782daac98d_icon.png">&nbsp;&nbsp;<a>https://www.instagram.com/degrey.saigon/</a></a>
+                  </div>
+                  <hr>
+                  <div>
+                  <p style="text-align: justify;"><img src="https://file.hstatic.net/1000281824/file/tiktok_eddd53a7150d4de489a9ccf8dc5bf5d0_icon.png">&nbsp;<a>https://www.tiktok.com/degrey.vn</a></p>
+                  </div>
+                  <hr>
+                  <p style="text-align: justify;"><img src="https://file.hstatic.net/1000281824/file/youtube_f86089dee31340fe8b215049d4a8d401_icon.png">&nbsp;<a>https://www.youtube.com/degreyvn</a></p>
+                  <hr>
+                  <p style="text-align: justify;"><img src="https://file.hstatic.net/1000281824/file/sp1_71c31a6c127340f5ac8cf33346736e3b_icon.png">&nbsp;<a>https://shopee.vn/degrey.vn</a></p>
+                  <hr>
+                  <p style="text-align: justify;"><img src="https://file.hstatic.net/1000281824/file/lzd_48cf94502c9e448089c717b548e2997a_icon.png">&nbsp;<a>https://www.lazada.vn/shop/degrey-vietnam/</a></p>
+              </div>*@
+                            <iframe  height="454"width="820" src="https://www.youtube.com/embed/4XZKgZWOUeg?si=IHHkpTRjhz0a5yp1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-xs-12 pageDetail-aside-right">
+                        <div class="sidebox">
+                            <div class="dropdown-store">
+                                <button onclick="myFunction()" class="dropbtn"><h3>Danh mục</h3></button>
+
+                                <div id="myDropdown" class="dropdown-content-store">
+                                     @Html.ActionLink("SẢN PHẨM","ProductList","Products")
+                                    <hr />
+                                    <a href="Store">STORE | CỬA HÀNG</a>
+                                    <hr>
+                                    <a href="ChinhSachVaQuyDinh">DEGREY | ABOUT US</a>
+                                </div>
+                            </div>
+                            <img style="width: 223.5px; height: 223.5px;" src="https://file.hstatic.net/1000281824/file/z3509830781478_ce69b71da0bf0aafd5d6455921bb9d4e_88f55bac63264b9c94bb5795b6a402d4.jpg" alt="Alternate Text" />
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script>
+    /* When the user clicks on the button,
+    toggle between hiding and showing the dropdown content */
+    function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function (event) {
+        if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+    }
+</script>
+

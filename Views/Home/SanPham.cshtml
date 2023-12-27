@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Degrey.Models.Product>
+@{
+    ViewBag.Title = "SanPham";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+<style>
+    .pagination {
+        background: #ccc;
+        width: 15%;
+        margin: auto;
+        padding-left: 20px;
+    }
+
+    li {
+        padding: 5px 10px;
+    }
+</style>
+<div class="container">
+    <h2>MUA HÀNG</h2>
+    <div style="border: 3px solid #ff6a00; height: 70px; text-align: center; padding: 15px;">
+        <!--Vị trí trình bày cho mục 5, tìm sản phẩm theo tên sp và giá-->
+        @using (Html.BeginForm("ProductList", "Products", FormMethod.Get))
+        {
+            <table>
+                <tr>
+                    <td>
+                        Tên Sản phẩm : <input type="text" name="SearchString" />
+                        <input type="submit" value="Tìm kiếm" class="btn btn-warning" />
+                    </td>
+                    <td>
+                        Đơn giá từ : <input type="number" name="min" />
+                        đến : <input type="number" name="max" />
+                        <input type="submit" value="Tìm giá" class="btn btn-warning" />
+                    </td>
+                </tr>
+            </table>
+        }
+
+    </div>
+    <div class="row">
+        @foreach (var pro in Model)
+        {
+            <div class="col-sm-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card-pro">
+                    <p>@Html.DisplayFor(model => pro.ProductID)</p>
+                    <img src="~/Content/images/@pro.ImagePro" width="200" height="250" />
+                    <p>@Html.DisplayFor(model => pro.NamePro)</p>
+                    <p>Đơn giá : <font color="red">@Html.DisplayFor(model => pro.Price)</font></p>
+                    <p style="text-align: center;">
+                        <a class="btn btn-info" href="/Products/Details/@pro.ProductID"> Chi tiết </a>
+                        <a href="/ShoppingCart/AddToCart/@pro.ProductID" class="btn btn-danger"> Mua </a>
+                    </p>
+                </div>
+            </div>
+        }
+    </div>
+
+

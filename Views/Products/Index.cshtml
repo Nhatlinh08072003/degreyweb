@@ -1,0 +1,62 @@
+﻿@model IEnumerable<Degrey.Models.Product>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 style="padding:10px">Trang Sản Phẩm</h2>
+
+<p style="padding-left:15px;margin-top:-10px">
+    @Html.ActionLink("Thêm sản phẩm mới", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            TÊN SẢN PHẨM
+        </th>
+        <th>
+          THÔNG TIN SẢN PHẨM
+        </th>
+        <th>
+           GIÁ
+        </th>
+        <th>
+            HÌNH ẢNH SẢN PHẨM
+        </th>
+        <th>
+          TÊN SẢN PHẨM
+        </th>
+        <th>
+           CHỨC NĂNG 
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NamePro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DecriptionPro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            <img src="~/Content/images/@item.ImagePro" width="60"/>
+            <br />
+            @Html.DisplayFor(modelItem => item.ImagePro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Category.NameCate)
+        </td>
+        <td>
+            @Html.ActionLink("sửa", "Edit", new { id=item.ProductID }) |
+            @Html.ActionLink("chi tiết", "Details", new { id=item.ProductID }) |
+            @Html.ActionLink("xóa", "Delete", new { id=item.ProductID })
+        </td>
+    </tr>
+}
+
+</table>

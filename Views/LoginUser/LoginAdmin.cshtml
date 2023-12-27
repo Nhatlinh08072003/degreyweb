@@ -1,0 +1,55 @@
+﻿@model Degrey.Models.AdminUser
+
+@{
+    ViewBag.Title = "RegisterUser";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+<style>
+    .wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50vh; /* Điều này sẽ giữ bảng ở giữa trang dựa trên chiều cao của trình duyệt */
+    }
+
+    .image-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
+@using (Html.BeginForm("LoginAdmin", "LoginUser"))
+{
+    @Html.AntiForgeryToken()
+    <div class="image-container" style="margin-top:">
+        <img class="logo-shop1" src="https://file.hstatic.net/1000281824/file/tote-1_33445b051a404bb790b6d0df0275ac8d.png" width="200px">
+    </div>
+    <div class="wrapper" style="margin-top:-200px">
+
+        <table class="table-container">
+            <tr>
+                <td style="padding: 5px">@Html.LabelFor(model => model.UserName) </td>
+                <td>@Html.TextBoxFor(model => model.UserName, new { style = "filed-validation-error" })</td>
+                <td>@Html.ValidationMessageFor(model => model.UserName)</td>
+            </tr>
+            <tr>
+                <td style="padding: 5px">@Html.LabelFor(model => model.PasswordUser)</td>
+                <td>@Html.TextBoxFor(model => model.PasswordUser)</td>
+                <td>@Html.ValidationMessageFor(model => model.PasswordUser)</td>
+                @if (ViewBag.ErrorInfo == null)
+                {
+                    @ViewBag.ErrorInfo
+                }
+            </tr>
+            <tr>
+
+                <td style="padding:5px 10px"><input style="padding:0px 30px" type="submit" value="Login" class="btn btn-primary" /></td>
+            </tr>
+        </table>
+    </div>
+    <br />
+    <br />
+}
+
+
+

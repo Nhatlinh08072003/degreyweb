@@ -1,0 +1,82 @@
+﻿
+@model IEnumerable<Degrey.Models.Product>
+@{
+    ViewBag.Title = "ProductList";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+<style>
+    .pagination {
+        background: #ccc;
+        width: 15%;
+        margin: auto;
+        padding-left: 20px;
+    }
+
+    li {
+        padding: 5px 10px;
+    }
+    span{
+        color:grey;
+    }
+    *{
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    .btn-info {
+      
+    }
+</style>
+
+<div class="home-product" style="padding-left:470px;font-size:25px;margin-top:10px">
+    <p >SẢN PHẨM DEGREY</p>
+</div>
+<div class="container">
+    <img src="https://file.hstatic.net/1000281824/file/cover_1_87a6ac90b1c94059a093003239175873.jpg" width="1100px"  />
+
+    <br />
+    <br />
+    @*@Html.ActionLink("Thêm Sản Phẩm Mới","Index","Products")*@
+    <br />
+    <div style="border: 3px solid black; height: 80px; padding: 15px; text-align: center;">
+    <!--Vị trí trình bày cho mục 5, tìm sản phẩm theo tên sp và giá-->
+    @using (Html.BeginForm("ProductList", "Products", FormMethod.Get))
+    {
+        <table  >
+            <tr>
+                <td style="padding:0 50px">
+                    Tên Sản phẩm : <input type="text" name="SearchString" />
+                    <input type="submit" value="Tìm kiếm" class="btn btn-warning" style="border-color:black;background-color:black;color:white;padding:5px 10px" />
+                </td>
+                <td></td>
+                <td>
+                    Đơn giá từ : <input type="number" name="min" />
+                    đến : <input type="number" name="max" />
+                    <input type="submit" value="Tìm giá" class="btn btn-warning" style="border-color: black; background-color: black; color: white; padding: 6px 15px"/>
+                </td>
+            </tr>
+        </table>
+    }
+</div>
+    <br />
+    <br>
+    <div class="row" style="text-align:center">
+        @foreach (var pro in Model)
+        {
+            <div class="col-sm-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card-pro">
+                    @*<p>@Html.DisplayFor(model => pro.ProductID)</p>*@
+                    <img src="~/Content/images/@pro.ImagePro" width="200" height="200" />
+                    <p>@Html.DisplayFor(model => pro.NamePro)</p>
+                    <p>Đơn giá : <font color="black">@Html.DisplayFor(model => pro.Price)</font></p>
+                    <p style="text-align: center;">
+                        <a class="btn btn-info" href="/Products/Details/@pro.ProductID" style="background-color:black;border-color:black"> Chi tiết </a>
+                        <a href="/ShoppingCart/AddToCart/@pro.ProductID" class="btn btn-danger" > Mua </a>
+                    </p>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+<br />
+
+
+

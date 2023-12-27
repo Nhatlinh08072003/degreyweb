@@ -1,0 +1,278 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/header-footer.css" rel="stylesheet" />
+    @*<link href="~/Content/content.css" rel="stylesheet" />*@
+    <link href="~/Content/Font/fontawesome-free-6.4.2-web/css/all.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="~/Content/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <style>
+        li{
+            text-decoration: none;
+        }
+
+            li:hover {
+                text-decoration: none;
+            }
+
+        .login {
+            display: block;
+            text-align: center;
+            position: absolute;
+            top: 29px;
+            right: 8%;
+            text-decoration: none;
+            font-family: sans-serif;
+            color: black;
+        }
+
+        .search {
+            position: absolute;
+            right: 17%;
+            top: 30px;
+            line-height: 1.6;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+        * {
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+        }
+    </style>
+</head>
+
+<body>
+    <header class="main" style="height: 90px">
+
+        <div class="main-header" style="height:90px">
+            <div class="container" style="max-width: 1140px; height: 90px">
+                <div class="flex-container-header">
+                    <div class="header-wrap-logo">
+                        <div class="wrap-logo">
+                            <a href="/Home">
+                                <img style="height:auto" src="https://file.hstatic.net/1000281824/file/tote-1_33445b051a404bb790b6d0df0275ac8d.png" alt="Day la anh" class="logo" />
+                            </a>
+
+                            <div class="search">
+                                <i class="fa-solid fa-magnifying-glass" style="color: #c7c7c7; margin: 0 10px"></i>
+                                <input type="text" name="search" placeholder="Tìm kiếm sản phẩm..." class="search-item" />
+                            </div>
+                            <div class="hidden-search">
+                            </div>
+                            <a class="cart" style="padding-right:25px">
+                                <i class="cart-icon fa-solid fa-cart-shopping"></i>
+                                <span>(@ViewBag.TotalNum)</span>
+                                <div class="list-item" style="position:absolute;right:0;margin-top:-61px;font-size:14px">
+                                    @Html.ActionLink("Giỏ Hàng", "ShowCart", "ShoppingCart")
+                                </div>
+                            </a>
+                            @if (Session["NameCus"] == null)
+                            {
+                                <div class="login" style="padding-left:250px;margin-top:-12px">
+                                    <i class="bi-person " style="font-size: 30px; padding-right: 35px;"></i>
+                                    <div class="list-item" style="position:absolute;right:0;margin-top:-20px;font-size:14px">@Html.ActionLink("Tài Khoản", "LoginCus", "Customers")</div>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="login" style="padding-left:250px;margin-top:-12px">
+                                    <i class="bi-person " style="font-size: 30px; padding-right: 35px;"></i>
+                                    <div class="list-item" style="position:absolute;right:0;margin-top:-20px;font-size:14px">@Session["NameCus"]</div>
+                                </div>
+                                <div style="padding-left:1100px; margin-top:-55px;display:">@Html.ActionLink("Log Out", "LogOut", "Customers")</div>    
+                            }
+
+                        </div>
+                    </div>
+                    <div class="header-wrap-main" style="font-size:30px">
+                        <ul class="header-list">
+                            <li class="list-item"><a href="/Home">Trang Chủ</a></li>
+                            <li class="list-item">@Html.ActionLink("Sản phẩm", "ProductList", "Products")</li>
+                            <li class="list-item"><a href="/Home/Store">Store</a></li>
+                            <li class="list-item"><a href="/Home/GioiThieu">Giới thiệu</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+        @RenderBody()   
+    <footer class="main-footer">
+        <div class="footer-info">
+            <div class="container" style="max-width: 1140px;max-height:482px">
+
+                <!-- Chuyển về dạng mobile -->
+                <div class="contact-details">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <div class="contact-info">
+                                    <div class="contact-info-box" style="display: grid;">
+                                        <span class="contact-info-text">Bán hàng 9:00 - 22:00</span>
+                                        <span class="contact-info-text">
+                                            <i class="fa fa-phone-square" aria-hidden="true"></i>
+                                            <a>0336311117</a>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="contact-info">
+                                    <div class="contact-info-box" style="display: grid;">
+                                        <span class="contact-info-text">Khiếu nại 9:00 - 21:30</span>
+                                        <span class="contact-info-text">
+                                            <i class="fa fa-phone-square" aria-hidden="true"></i>
+                                            <a>0775913335</a>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="expand-button" id="expand-info">
+                                    <div class="expand-button-box" onclick="toggleInfo()">
+                                        <span class="expand-button-text expand-button-initial">Xem thêm thông tin</span>
+                                        <span class="expand-button-icon" id="expand-icon">
+                                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    function toggleInfo() {
+                        var infoBox = document.getElementById("expand-info");
+                        var expandIcon = document.getElementById("expand-icon");
+
+                        // Kiểm tra trạng thái hiển thị của thông tin mở rộng
+                        if (infoBox.classList.contains("expanded")) {
+                            infoBox.classList.remove("expanded");
+                            expandIcon.innerHTML = '<i class="fa fa-angle-down" aria-hidden="true"></i>';
+                        } else {
+                            infoBox.classList.add("expanded");
+                            expandIcon.innerHTML = '<i class="fa fa-angle-up" aria-hidden="true"></i>';
+                        }
+                    }
+                </script>
+                <!-- Chuyển về dạng mobile -->
+                <div class="row">
+                    <div class="col-md-3 col-sm-12 col-xs-12 footer-list ">
+                        <h3 class="col-footer">Về DEGREY</h3>
+                        <div class="col-3-item text-white"><p>Cái tên Degrey được tạo ra rất ngẫu hứng, xuất phát từ “Chuỗi ngày u buồn về sự nghiệp, tương lai trong quá khứ của chính mình” – theo lời chia sẻ của Degrey’s founder.</p></div>
+                        <div class="col-3-item1 text-white">CÔNG TY TNHH DEGREY</div>
+                        <div class="col-3-item text-white"><p>0315986019 0315986019 cấp ngày 31/10/2019 tại Sở kế hoạch đầu tư TPHCM</p></div>
+                        <img class="logo-footer" src="https://file.hstatic.net/1000281824/file/dathongbao_22c990fc936b40e0a50a1b646f478284.png" alt="logo footer" />
+
+                    </div>
+                    <div class="col-md-3 col-sm-12 col-xs-12 footer-list-2">
+                        <div class="col-3-item text-white address">Địa chỉ</div>
+                        <div class="col-3-item text-white where">-Sài Gòn:</div>
+                        <div class="col-3-item text-white">
+                            <p>
+                                43 Huỳnh Văn Bánh P.17 Q.Phú Nhuận<br>
+                                1041 Luỹ Bán Bích P.Tân Thành Q.Tân Phú
+                            </p>
+                        </div>
+                        <div class="phone col-3-item text-white">
+                            <b>Điện thoại: </b>
+                            0336311117
+                        </div>
+
+                        <div class="email col-3-item text-white">
+                            <b>Email:  </b>
+                            degrey.vn@gmail.com
+                        </div>
+
+                    </div>
+                    <div class="col-md-3 col-sm-12 col-xs-12 footer-list">
+                        <h3 class="col-footer">Hỗ trợ khách hàng</h3>
+                        <ul class="pro-list">
+                            <li>@Html.ActionLink("Giới Thiệu về Degrey","GioiThieu","Home")</li>
+                            <li>@Html.ActionLink("Store Degrey","Store","Home")</li>
+                            <li>@Html.ActionLink("Hướng Dẫn Đặt Hàng","HuongDanDatHang","Home")</li>
+                            <li>@Html.ActionLink("Chính Sách Và Quy Định","ChinhSachVaQuyDinh","Home")</li>
+                            <li>@Html.ActionLink("Chính Sách Bảo Mật","ChinhSachBaoMat","Home")</li>
+                            <li>@Html.ActionLink("Thông Tin Sở Hữu","ThongTinSoHuu","Home")</li>
+                        </ul>
+
+                    </div>
+                    <div class="col-md-3 col-sm-12 col-xs-12 footer-list">
+                        <h3 class="col-footer">Chăm sóc khách hàng</h3>
+                        <div class="box-contact">
+                            <i class="fa-solid fa-phone icon-call"></i>
+                            <div class="contact">
+                                <span>0336311117</span><br>
+                                <u>degrey.vn@gmail.com</u>
+                            </div>
+                        </div>
+                        <div class="footer-list-social">
+                            <h4 class="col-footer1">
+                                Follow Us
+                            </h4>
+
+                            <ul class="social">
+                                <li><a href="https://www.facebook.com/degrey.saigon"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="https://degrey.vn/blogs/news/follow-degrey"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="https://www.instagram.com/degrey.saigon/"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="https://degrey.vn/blogs/news/follow-degrey"><i class="fab fa-linkedin"></i></a></li>
+                                <li><a href="https://degrey.vn/blogs/news/follow-degrey"><i class="fab fa-youtube"></i></a></li>
+                            </ul>
+
+
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        </div>
+    </footer>
+    <div class="footer-copyright" style="max-height:45.6px">
+        <div class="container">
+            <p>
+                Copyright © 2023 <a href="#" style="color: white;text-decoration: none;"> DEGREY VIETNAM</a>
+                <a>Powered by Haravan</a>
+            </p>
+        </div>
+
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
+         aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Giỏ hàng</h5>
+                    <button type="button" class="btniconclose close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <table class="show-cart table" id="cart-table">
+                        <tbody></tbody>
+                    </table>
+                    <div class="grand-total">Tổng tiền: <span class="total-cart"></span></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btnclose btn btn-secondary" data-dismiss="modal">Close</button>
+                    <!-- <button type="button" class="btn btn-danger clear-all">Clear All</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Degrey.Models.OrderPro>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 style="padding-left:10px;margin-top:10px    ">HÓA ĐƠN SẢN PHẨM</h2>
+
+<p style="padding-left:15px">
+    @Html.ActionLink("thêm hoá đơn mới", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+          NGÀY ĐẶT HÀNG
+        </th>
+        <th>
+            ĐỊA CHỈ GIAO HÀNG
+        </th>
+        <th>
+            TÊN NGƯỜI NHẬN
+        </th>
+        <th>
+            CHỨC NĂNG
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateOrder)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AddressDeliverry)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Customer.NameCus)
+        </td>
+        <td>
+            @Html.ActionLink("sửa", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("chi tiết", "Details", new { id=item.ID }) |
+            @Html.ActionLink("xóa", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

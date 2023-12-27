@@ -1,0 +1,71 @@
+﻿@model Degrey.Models.Customer
+
+@{
+    ViewBag.Title = "LoginCus";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+<style>
+    .table-container {
+        display: flex;
+        justify-content: center; /* Căn giữa theo chiều ngang */
+        align-items: center; /* Căn giữa theo chiều dọc */
+    }
+
+    .image-container {
+        display: flex;
+        justify-content: center; /* Căn giữa theo chiều ngang */
+        align-items: center; /* Căn giữa theo chiều dọc */
+    }
+
+    .wrapper {
+        background: transparent;
+        border: 2px solid rgba(255, 255,255,0.2);
+        backdrop-filter: blur(20px);
+        box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        color: #000;
+        border-radius: 10px;
+        padding: 30px 40px;
+        width: 2000px
+    }
+</style>
+@using (Html.BeginForm("LoginCus", "Customers"))
+{
+    @Html.AntiForgeryToken()
+    <div class="wrapper">
+        <div class="image-container">
+            <img class="logo-shop1" src="https://file.hstatic.net/1000281824/file/tote-1_33445b051a404bb790b6d0df0275ac8d.png" width="200px">
+        </div>
+
+        <table class="table-container">
+            <tr>
+                <td style="padding: 5px">@Html.LabelFor(model => model.UserName) </td>
+                <td>@Html.TextBoxFor(model => model.UserName, new { style = "filed-validation-error" })</td>
+                <td>@Html.ValidationMessageFor(model => model.UserName)</td>
+            </tr>
+            <tr>
+                <td style="padding: 5px">@Html.LabelFor(model => model.Password)</td>
+                <td>@Html.EditorFor(model => model.Password)</td>
+                <td>@Html.ValidationMessageFor(model => model.Password)</td>
+                @if (ViewBag.ErrorInfo == null)
+                {
+                    <p>@ViewBag.ErrorInfo</p>
+                }
+
+            </tr>
+            <tr>
+
+                <td style="padding:5px 10px"><input style="padding:0px 30px" type="submit" value="Login" class="btn btn-primary" /></td>
+                <th style="padding:10px 20px">@Html.ActionLink("Đăng ký", "RegisterCus", "Customers")</th>
+            </tr>
+
+            <tr>
+
+                <td style="padding:5px 10px">@Html.ActionLink("Đăng nhập bằng admin", "LoginAdmin", "LoginUser")</td>
+            </tr>
+        </table>
+    </div>
+    <br />
+    <br />
+}
+
+

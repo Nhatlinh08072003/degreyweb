@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <header class="main" style="height: 90px">
+
+        <div class="main-header" style="height:90px">
+            <div class="container" style="max-width: 1140px; height: 90px">
+                <div class="flex-container-header">
+                    <div class="header-wrap-logo">
+                        <div class="wrap-logo">
+                            <a href="/Home">
+                                <img style="height:auto" src="https://file.hstatic.net/1000281824/file/tote-1_33445b051a404bb790b6d0df0275ac8d.png" alt="Day la anh" class="logo" />
+                            </a>
+
+                            <div class="login" style="padding-left:250px;margin-top:-12px">
+                                <i class="bi-person " style="font-size: 30px; padding-right: 35px;"></i>
+                                <div class="list-item" style="position:absolute;right:0;margin-top:-20px;font-size:14px">@Session["UserName"]</div>
+                            </div>
+                            <div style="position:absolute;right:0; margin-top:-80px">@Html.ActionLink("Đăng xuất", "LogOut", "LoginUser")</div>
+                        </div>
+                    </div>
+                    <div class="header-wrap-main" style="font-size:30px">
+                        <ul class="header-list">
+                            <li class="list-item"><a href="@Url.Action("Index", "LoginUser")">Trang Chủ</a></li>
+                            <li class="list-item">@Html.ActionLink("Sản phẩm", "Index", "Products")</li>
+                            <li class="list-item"><a href="@Url.Action("Index", "Categories")">Loại</a></li>
+                            <li class="list-item"><a href="@Url.Action("Index", "OrderProes")">Hoá đơn</a></li>
+                            <li class="list-item"><a href="@Url.Action("Index", "Customers")">Khách hàng</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    @RenderBody()
+    </body>
+</html>

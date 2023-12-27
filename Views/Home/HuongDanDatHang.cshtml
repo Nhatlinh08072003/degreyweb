@@ -1,0 +1,120 @@
+﻿
+@{
+    ViewBag.Title = "HuongDanDatHang";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+    <link href="~/Content/store.css" rel="stylesheet" />
+    <link href="~/Content/sanpham.css" rel="stylesheet" />
+
+}
+<div class="main-content-product" style=" max-height: 2237px;">
+    <div class="breadcrumb-all">
+        <div class="container" style="height:100%">
+            <div class="wrap-breadcrumb">
+                <ol class="breadcrumb-list">
+                    <li><a href="Home">Trang chủ</a></li>
+                    <li style="color: #777777;">Tất cả sản phẩm</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="height: 2237px;">
+        <div class="row">
+            <div class="col-md-9 col-sm-8 col-xs-12 pageDetail-main-left">
+                <div class=" pageDetail-content">
+                    <div class="wrap-title" style="height: 2237px;">
+                        <div class="heading-pageDetail" style="font-size:30px; margin-bottom:25px;"><h1>Hướng dẫn đặt hàng</h1></div>
+                        <div class=" content2-pageDetail">
+                            <p style="font-size:14px; margin-bottom:10px;">
+                                &nbsp;
+                            </p>
+                            <p style="font-size:30px;">
+                                <h2>Hướng dẫn mua hàng tại degrey.vn</h2>
+                                Quý khách khi đặt mua thành công, Degrey sẽ liên hệ với các bạn qua số điện thoại để
+                                tiến hành xác nhận lại chính xác thông tin: đơn hàng, sản phẩm, địa chỉ.
+                            </p>
+                            <blockquote>
+                                <p style="font-size: 17.5px; margin-bottom: 10px;">
+                                    Quý khách vui lòng liên hệ nếu đơn hàng gặp vấn đề:
+                                </p>
+                                <p style="font-size: 17.5px; margin-bottom: 10px;">
+                                    Hotline:&nbsp;
+                                    <a> 0336311117</a>
+                                </p>
+                                <br />
+                                <p style="font-size: 17.5px; margin-bottom: 10px;">
+                                    Facebook:&nbsp;
+                                    <a>https://www.facebook.com/degrey.saigon/</a>
+                                </p>
+                                <br />
+                                <p style="font-size: 17.5px; margin-bottom: 10px;">
+                                    Instagram::&nbsp;
+                                    <a>https://www.instagram.com/degrey.saigon/&nbsp;</a>
+                                </p>
+                                <p style="font-size: 17.5px; margin-bottom: 10px;">
+                                    &nbsp;
+                                </p>
+                            </blockquote>
+
+                            <div class="media" style="padding-top: 40px;display:flex">
+                                <img src="https://file.hstatic.net/1000281824/file/d1_grande.png">
+                                <br />
+                            </div>
+                            <div class="media" style="padding-top: 40px;">
+                                <img src="https://file.hstatic.net/1000281824/file/d2_grande.png">
+                                <br />
+                            </div>
+                            <div class="media" style="padding-top: 40px;">
+                                <img src="https://file.hstatic.net/1000281824/file/d3_grande.png">
+                                <br />
+                            </div>
+                            <div class="media" style="padding-top: 40px;">
+                                <img src="https://file.hstatic.net/1000281824/file/d4_grande.png">
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-3 col-sm-4 col-xs-12 pageDetail-aside-right" style="height: 2237px;">
+                <div class="sidebox">
+                    <div class="dropdown-store">
+                        <button onclick="myFunction()" class="dropbtn"><h3>Danh mục page</h3></button>
+
+                        <div id="myDropdown" class="dropdown-content-store">
+                            <a href="SanPham">SẢN PHẨM DEGREY</a>
+                            <hr>
+                            <a href="Store">STORE | CỬA HÀNG</a>
+                            <hr>
+                            <a href="#">DEGREY | ABOUT US</a>
+                        </div>
+                    </div>
+                    <img style="width: 223.5px; height: 223.5px;" src="https://file.hstatic.net/1000281824/file/z3509830781478_ce69b71da0bf0aafd5d6455921bb9d4e_88f55bac63264b9c94bb5795b6a402d4.jpg" alt="Alternate Text" />
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    /* When the user clicks on the button,
+    toggle between hiding and showing the dropdown content */
+    function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function (event) {
+        if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+    }
+</script>

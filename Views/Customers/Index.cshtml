@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Degrey.Models.Customer>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 style="padding-left:10px;margin-top:10px">THÔNG TIN ĐĂNG NHẬP</h2>
+
+<p style="padding-left:15px">
+    @Html.ActionLink("thêm thông tin khách hàng", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            TÊN KHÁCH HÀNG
+        </th>
+        <th>
+           SỐ ĐIỆN THOẠI
+        </th>
+        <th>
+           EMAIL
+        </th>
+        <th>
+          TÊN ĐĂNG NHẬP
+        </th>
+        <th>
+            MẬT KHẨU
+        </th>
+        <th>
+            CHỨC NĂNG
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NameCus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PhoneCus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmailCus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Password)
+        </td>
+        <td>
+            @Html.ActionLink("sửa", "Edit", new { id=item.IDCus }) |
+            @Html.ActionLink("chi tiết", "Details", new { id=item.IDCus }) |
+            @Html.ActionLink("xóa", "Delete", new { id=item.IDCus })
+        </td>
+    </tr>
+}
+
+</table>

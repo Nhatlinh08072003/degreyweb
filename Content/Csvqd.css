@@ -1,0 +1,145 @@
+﻿.main-content-product {
+    height: 4200px;
+}
+
+.pageDetail-content-left {
+    height: 1317px;
+    position: relative;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.pageDetail-content2 {
+    padding: 20px;
+}
+
+.taskbar-shop {
+    width: 100%;
+    height: 36.850px;
+}
+
+.row {
+    width: 100%;
+    height: 1357px;
+}
+
+.container {
+    margin-left: 174.6px;
+    margin-right: 174.6px;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 1170px;
+}
+
+
+.container2 {
+    padding: 10px;
+}
+
+.taskbar {
+    font-family: Quicksand, sans-serif;
+    font-size: 12px;
+    line-height: 18.85px;
+    list-style: none;
+    padding: 0;
+    content: "/";
+    margin-right: 5px; /* Khoảng cách giữa mỗi dấu / */
+}
+
+    .taskbar li {
+        margin-left: -5px;
+        display: inline; /* hoặc display: inline-block; */
+        margin-right: 10px; /* (tùy chọn) Để tạo khoảng cách giữa các mục danh sách */
+    }
+
+        .taskbar li::before {
+            content: " / ";
+            margin-right: 5px; /* Điều chỉnh khoảng cách giữa dấu gạch chéo và các mục danh sách */
+        }
+
+        .taskbar li:first-child::before {
+            content: ""; /* Loại bỏ dấu gạch chéo ở mục đầu tiên */
+        }
+
+    .taskbar a {
+        text-decoration: none; /* Loại bỏ gạch dưới */
+        color: black; /* Đặt màu chữ là màu đen */
+    }
+
+.heading-pageDetail h1 {
+    margin-bottom:25px;
+    font-size: 29px;
+    font-weight: 500;
+}
+
+.pageDetail-content-right {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.pageDetail-content2 {
+    padding: 20px;
+}
+
+.sidebox {
+    width: 100%;
+    height: 100%;
+    margin: 0 0 20px;
+    position: relative;
+    padding: 20px 15px;
+    background: #ffffff;
+}
+
+/*drop*/
+
+.dropbtn {
+    text-indent: -110px;
+    width: 100%;
+    background-color: white;
+    color: black;
+    padding: 16px;
+    font-size: 20px;
+    border: none;
+    font-family: Quicksand, sans-serif;
+    /* font-size: 18px; */
+    font-weight: 700;
+    height: 45.6px;
+    line-height: 21.6px;
+}
+
+    .dropbtn:hover, .dropbtn:focus {
+        background-color: white;
+    }
+
+.dropdown-store {
+    width: 100%;
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content-store {
+    width: 100%;
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    overflow: auto;
+    z-index: 1;
+}
+
+    .dropdown-content-store a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+.dropdown-store a:hover {
+    background-color: #ddd;
+}
+
+.show {
+    display: block;
+}

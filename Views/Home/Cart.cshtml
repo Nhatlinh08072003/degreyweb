@@ -1,0 +1,62 @@
+﻿
+@{
+    ViewBag.Title = "Cart";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+    <link href="~/Content/cart.css" rel="stylesheet" />
+    <link href="~/Content/sanpham.css" rel="stylesheet" />
+
+}
+<div class="main-content-cart">
+    <div class="breadcrumb-all">
+        <div class="container" style="height:100%">
+            <div class="wrap-breadcrumb">
+                <ol class="breadcrumb-list">
+                    <li><a href="Home">Trang chủ</a></li>
+                    <li style="color: #777777;">Tất cả sản phẩm</li>
+                </ol>
+            </div>
+            
+            <div class="wrap-title">
+                <h4>Giỏ hàng của bạn</h4>
+            </div>
+            <div class="cart-product">
+                <span>Giỏ hàng của bạn đang trống</span>
+            </div>
+           
+            <div class="col-md-4">
+                <h4 class="summary-title">
+                    Thông tin đơn hàng
+                </h4>
+                <div class="summary-total">
+                    <p>
+                        Tổng tiền:
+                        <span>0₫</span>
+                    </p>
+
+                </div>
+
+                <div class="summary-action">
+                    <p>Phí vận chuyển sẽ được tính ở trang thanh toán.</p>
+                    <p>Bạn cũng có thể nhập mã giảm giá ở trang thanh toán.</p>
+                </div>
+
+                <div class="rounded-rectangle">
+                    Giỏ hàng của bạn hiện chưa đạt mức tối thiểu để thanh toán.
+                </div>
+                <button class="custom-button">@Html.ActionLink("Thanh Toán","ShowCart","ShoppingCart")</button>
+                <div class="summary-warring">
+                    <p>
+                        <strong style="position: absolute; top: 369px;left: 23px;">Chính sách giao hàng</strong>
+                    </p>
+                    <p style="font-size: 14px;">
+                        Hiện chúng tôi chỉ áp dụng thanh toán với đơn hàng có giá trị tối thiểu <strong>150.000₫</strong> trở lên.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+   
+
+</div>

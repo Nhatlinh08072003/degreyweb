@@ -1,0 +1,82 @@
+﻿@model Degrey.Models.Customer
+
+@{
+    ViewBag.Title = "RegisterCus";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<style>
+    .field-validation-error {
+        color: red;
+    }
+
+    .image-container {
+        display: flex;
+        justify-content: center; /* Căn giữa theo chiều ngang */
+        align-items: center; /* Căn giữa theo chiều dọc */
+    }
+
+    .wrapper {
+        background: transparent;
+        border: 2px solid rgba(255, 255,255,0.2);
+        backdrop-filter: blur(20px);
+        box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        color: #000;
+        border-radius: 10px;
+        padding: 30px 40px;
+        width: 2000px
+    }
+
+    .table-container {
+        display: flex;
+        justify-content: center; /* Căn giữa theo chiều ngang */
+        align-items: center; /* Căn giữa theo chiều dọc */
+        height: 100vh; /* Đặt chiều cao của phần tử chứa cho cả trang */
+    }
+</style>
+<div class="wrapper">
+
+    <div class="table-container">
+        @using (Html.BeginForm("RegisterCus", "Customers", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <div class="image-container">
+                <img class="logo-shop1" src="https://file.hstatic.net/1000281824/file/tote-1_33445b051a404bb790b6d0df0275ac8d.png" width="200px">
+            </div>
+
+            //nó hiển thị nhiều lỗi nên là m sửa sao để nó chỉ hiển thị 1 lỗi á (hỏi chatgpt thử)
+            //hoặc để dãy cũm được :))))
+            @Html.ValidationSummary(true)
+
+
+            @*if (ViewBag.ErrorRegister != null)
+            {
+                <p>@ViewBag.ErrorRegister</p>
+            }*@
+
+            <p>@Html.LabelFor(model => model.NameCus)</p>
+            <p>@Html.EditorFor(model => model.NameCus)</p>
+            <p>@Html.ValidationMessageFor(model => model.NameCus)</p>
+
+            <p>@Html.LabelFor(model => model.PhoneCus)</p>
+            <p>@Html.EditorFor(model => model.PhoneCus)</p>
+            <p>@Html.ValidationMessageFor(model => model.PhoneCus)</p>
+
+            <p>@Html.LabelFor(model => model.EmailCus)</p>
+            <p>@Html.EditorFor(model => model.EmailCus)</p>
+            <p>@Html.ValidationMessageFor(model => model.EmailCus)</p>
+
+            <p>@Html.LabelFor(model => model.UserName)</p>
+            <p>@Html.EditorFor(model => model.UserName)</p>
+            <p>@Html.ValidationMessageFor(model => model.UserName)</p>
+
+            <p>@Html.LabelFor(model => model.Password)</p>
+            <p>@Html.EditorFor(model => model.Password)</p>
+            <p>@Html.ValidationMessageFor(model => model.Password)</p>
+
+            <input type="submit" value="Đăng kí" class="btn btn-primary" />
+        }
+
+
+    </div>
+</div>
+
